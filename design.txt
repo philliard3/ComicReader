@@ -1,0 +1,18 @@
+
+React Router takes in the page name/number from the route
+Parent React (Router) component checks its array of loaded pages
+const loadedIndices = pages.map((obj)=>{return obj.pageName;})
+Of the requested page name/number is not in the loaded indices, request it from the server
+(Set up CORS in order to pull images from flask to react)
+const requestedIndex = '1';
+const isRequestedAlreadyLoaded = loadedIndices.includes(requestedIndex);
+Store the server-retrieved image in the array of loaded pages
+Inside the render function, generate the array of routes from the array of loaded pages
+Reader component is given the proper image via routing and props
+The props variable is an image blob or <img> tag that contains the blob
+Reader then allows the user to navigate within the given image to do stuff
+
+
+
+***The array of loaded pages should be part of the router's state so that it will automatically trickle down
+    *** the correct image to the Reader child
